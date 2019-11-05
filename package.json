@@ -1,0 +1,22 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangfang1/react-ssr.git"
+  },
+  "keywords": [
+    "ssr"
+  ],
+  "author": "yangfang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangfang1/react-ssr/issues"
+  },
+  "homepage": "https://github.com/yangfang1/react-ssr#readme"
+}
