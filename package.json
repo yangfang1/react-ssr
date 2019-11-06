@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/yangfang1/react-ssr/issues"
   },
-  "homepage": "https://github.com/yangfang1/react-ssr#readme"
+  "homepage": "https://github.com/yangfang1/react-ssr#readme",
+  "dependencies": {
+    "webpack": "^4.41.2"
+  }
 }
