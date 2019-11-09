@@ -4,13 +4,15 @@ const HtmlPlugin=require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//启用每次打包都生成新的dist目录，覆盖旧的dist目录
 module.exports={
     mode:'development',
+    target:"node",
     entry:{
-        app:path.join(__dirname,"../client/index.js"),
+        app:path.join(__dirname,"../server/app.js"),
     },
     output:{
         path:path.join(__dirname,'../dist'),
-        filename:'app.[hash].js',
-        publicPath:"/public"
+        filename:'serverBundle.js',
+        publicPath:"/public",
+        libraryTarget: 'commonjs2'
     },
     module: {
         rules: [
@@ -20,11 +22,5 @@ module.exports={
             exclude: path.join(__dirname, '../node_modules')
           }
         ]
-      },
-    plugins:[
-        new HtmlPlugin({
-          template:path.join(__dirname,'../client/index.html')
-        }),
-        new CleanWebpackPlugin()
-    ]
+      }
 }
