@@ -1,6 +1,7 @@
 // 初始webpack配置
 const path=require('path');
 const HtmlPlugin=require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');//启用每次打包都生成新的dist目录，覆盖旧的dist目录
 module.exports={
     mode:'development',
     entry:{
@@ -21,6 +22,7 @@ module.exports={
         ]
       },
     plugins:[
-        new HtmlPlugin()
+        new HtmlPlugin(),
+        new CleanWebpackPlugin()
     ]
 }
