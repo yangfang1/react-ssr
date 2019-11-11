@@ -1,7 +1,21 @@
+import 'react-hot-loader/patch';
+import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom'
-import App from './app';
-ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
+import App from './App';
+// const isDev=process.env.NODE_ENV==='development';
+const render=(Component)=>(
+    ReactDOM.render(
+        <AppContainer>
+            <Component/>
+        </AppContainer>,
+        document.getElementById('root')
+    )
 )
+render(App);
+if(module.hot){
+    module.hot.accept('./App', ()=>{
+        const nextApp=require('./App').default;
+        render(nextApp)
+    })
+}
